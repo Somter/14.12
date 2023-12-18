@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 01</title>
+    <style>
+        .form-group {
+            margin: 4px;
+        }
+
+        .form-group label {
+            width: 75px;
+            display: inline-block;
+        }
+
+        .hint{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="form-group">
+            <label>Логин</label>
+            <input type="text" name="login" id="login">
+            <span class="hint" id="loginHint">Ваш логин должен состоять не менее чем из 4 символов</span>
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" name="password" id="password">
+            <span class="hint" id="passwordHint">Пароль должен содержать буквы, цифры и специальный символ</span>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Зарегистрироваться">
+        </div>
+    </form>
+    <script>
+        let form = document.forms[0];
+        let login = document.getElementById("login");
+        let password = document.getElementById("password");
+
+        form.addEventListener("submit", function (event) {
+        alert("Логин: " + login.value + "\nПароль: " + password.value);
+        });
+
+        login.addEventListener("focus", function () {
+            document.getElementById("loginHint").style.display = "inline";
+        });
+
+        password.addEventListener("focus", function () {
+            document.getElementById("passwordHint").style.display = "inline";
+        });
+    </script>
+</body>
+
+</html>
